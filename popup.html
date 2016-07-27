@@ -1,0 +1,34 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+        width: 300px;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Gifs are always trending</h3>
+    <h5>Enter a term below and then hit save.</h5>
+    <input type='text' id="search_term" />
+    <br />
+    <button id="save">Save</button> 
+    <script type="text/javascript" src="popup.js"></script>
+  </body>
+</html>
