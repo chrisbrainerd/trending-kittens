@@ -3,7 +3,6 @@ function set_search_term() {
   chrome.storage.sync.set({'search_term': document.getElementById("search_term").value}, function() {
     console.log('Settings saved');
   });
-  // setTimeout(function() {window.close();}, 1450);
   load_gif();
   setTimeout(function() {
     document.getElementById("saved-message").classList.remove('show');
@@ -23,17 +22,16 @@ document.getElementById('search_term').addEventListener("keypress", function(e) 
   if (e.keyIdentifier=='Enter') {set_search_term();}
 });
 
-chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
-  console.log(request)
-});
-
-
 function load_gif() {
-
   chrome.storage.sync.get('search_term', function(items) {
     let search_term = items.search_term;
-    if (search_term == undefined) { search_term = 'kitten'; }
-    search_term = search_term.replace(/[^A-Za-z0-9]/g, '+');
+    if (search_term == undefined) { 
+      document.getElementById('search_term').value = 'kitten';
+      search_term = 'kitten'; 
+    }
+
+    // cleanse input, might want to make this less restrictive
+    search_term = search_term.replace(/[^A-Za-z0-9]/g, '+'); 
 
     var xhr= new XMLHttpRequest();
     api_url = 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + search_term
@@ -44,32 +42,40 @@ function load_gif() {
         let dump = JSON.parse(this.responseText);
         let imgurl = dump.data.image_url;
         let div = '<img width=252 src="' + imgurl + '" />';
-        // document.getElementById('y').innerHTML= this.responseText;
         document.getElementById("gif-holder").innerHTML = div;
-       update_history();
+        update_history(imgurl, search_term);
     };
     xhr.send();
   });
 }
 
 window.onload = function() {
-  
   load_gif();
-
 }
 
-function update_history() {
+function update_history(imgurl, search_term) {
+  console.log("getting history, imgurl: " + imgurl + ", search_term: " + search_term);
   chrome.storage.sync.get('giphy_history', function(items) {
-    let giphy_history = items.giphy_history;
-    if (items.giphy_history==undefined) {giphy_history = []}
+    var giphy_history;
+    if ('giphy_history' in items) {
+      giphy_history = items['giphy_history'];
+    } else {
+      giphy_history = [];
+    }
   
     if (giphy_history.length >= 5) {
       giphy_history.shift()
     } 
-    giphy_history.push({imgurl: imgurl, search_term: search_term})
+    
+    giphy_history.push({'imgurl': imgurl, 'search_term': search_term})
     chrome.storage.sync.set({'giphy_history': giphy_history}, function() {
       // update_history_tab();
-      document.getElementById("gif-holder").innerHTML = giphy_history;
+      let htmlstr = '';
+      // need to build html string to populate history tab
+      // might be easiest to have five divs, id of history_n and loop through list
+      // so if there's no item n, the div would be empty?
+      for (item in history) {do stuff}
+      document.getElementById("history").innerHTML = giphy_history;
     })
   })
 }
