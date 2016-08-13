@@ -7,28 +7,146 @@
 <html>
   <head>
     <title>Getting Started Extension's Popup</title>
+    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="materialize.min.js"></script>
+  
     <style>
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+
         font-size: 100%;
-        width: 300px;
+        width: 400px;
+        background-color: #F5F3F5;
+        color: #002A32;
+        margin: 0;
+        padding: 0 0 20px 0;
       }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
+
+      .header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 45px;
+        background-color: #002A32;
+        color: #F5F3F5;
       }
+      .header span {
+        font-family: 'Patua One', cursive;
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 300;
+      }
+      .header, #tabs {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        padding: 0;
+      }
+      #tabs .tab a {
+        color: #002A32 !important;
+      }
+      #tabs .indicator {
+        background-color: #E98A15;
+      }
+      #tabs {
+        margin-bottom: 20px;
+      }
+      h5 {
+        width: 100%;
+        text-align: center;
+      }
+      input {
+        float: left;
+        display: inline;
+        width: auto;
+      }
+      #share input, #share label {
+        width: 70%;
+      }
+      button {
+        float: right;
+        display: inline;
+        /*width: 25%;*/
+      }
+      #saved-message {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        font-size: 50px;
+        opacity: 0;
+        background-color: #002A32;
+        color: #F5F3F5;
+        z-index: -1;
+        -webkit-transition: opacity .45s ease-in-out;
+        background-image: repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);
+        background-size: 70px 70px; /* This is unique for this background, need to find a pattern and develop a formula */
+        animation: slide 12s infinite linear forwards;
+      }
+      @keyframes slide {
+          0% { background-position: 0% 0; }
+          100% { background-position: 100% 100%; }
+      }
+      #saved-message span {
+        width: 100%;
+        text-align: center;
+      }
+      #saved-message.show {
+        opacity: 1;
+        font-weight: 800;
+        /*display: inherit;*/
+        z-index: 9;
+      }
+      #gif-holder {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
     </style>
   </head>
 
   <body>
-    <h3>Gifs are always trending</h3>
-    <h5>Enter a term below and then hit save.</h5>
-    <input type='text' id="search_term" />
-    <br />
-    <button id="save">Save</button> 
+    <div id='saved-message'>
+        <span><i>Saved!</i></span>
+    </div>
+    <div class='header'>
+      <span>Gifs are <i>always</i> trending!</span>
+    </div>
+    <div class="row">
+      <div class="col s12" id='tabs'>
+        <ul class="tabs">
+          <li class="tab col s3"><a href="#share">Change gifs</a></li>
+          <li class="tab col s3"><a class="#change" href="#test2">Share</a></li>
+          <li class="tab col s3"><a href="#history">History</a></li>
+        </ul>
+      </div>
+      <div id="share" class="col s12">
+        <div class="input-field col s12">
+          <input id="search_term" type="text" class="validate">
+          <label for="search_term">Giphy search term</label>
+          <button class="btn waves-effect waves-light" id='save' name="action">Save</button>
+        </div>
+
+        <div class='col s12'>
+          <div id='gif-holder'></div>
+        </div>  
+        
+      </div>
+      <div id="change" class="col s12">
+        
+      </div>
+      <div id="history" class="col s12">
+        
+      </div>
+    </div>
+
     <script type="text/javascript" src="popup.js"></script>
   </body>
+
 </html>
+

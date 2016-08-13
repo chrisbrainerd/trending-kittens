@@ -2,20 +2,22 @@
   "manifest_version": 2,
 
   "name": "Kittens are Always Trending",
-  "description": "Facebook's 'Trending Items' are usually depressing or stupid or otherwise not something I want to look at. This replaces that whole block with random gifs. Kittens are great so that's the default, but you can replace that with any search term you want!",
-  "version": "1.0",
+  "description": "Facebook's 'Trending Items' are usually depressing or stupid. This replaces that whole block with a random gif from giphy.",
+  "version": "1.0.1",
   "icons": { "16": "icon16.png",
              "48": "icon48.png",
             "128": "icon128.png" },
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "icon16.png",
     "default_popup": "popup.html"
   },
   "permissions": [
+    "webNavigation",
     "activeTab",
     "https://www.facebook.com/*",
     "http://www.facebook.com/*",
-    "storage"
+    "storage",
+    "tabs"
   ],
   "content_scripts": [
     {
@@ -24,5 +26,8 @@
       "css": ["stupidfacebook.css"],
       "run_at": "document_end"
     }
-  ]
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
 }
