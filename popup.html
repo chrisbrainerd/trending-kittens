@@ -8,26 +8,33 @@
   <head>
     <title>Getting Started Extension's Popup</title>
     <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="materialize.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+
 
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="materialize.min.js"></script>
+    <script type="text/javascript" src="clipboard.min.js"></script>
   
     <style>
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-
         font-size: 100%;
         width: 400px;
         background-color: #F5F3F5;
         color: #002A32;
         margin: 0;
-        padding: 0 0 20px 0;
+        padding: 0;
+        /*overflow: hidden;*/
+        /*min-height: 250px;*/
+        display: flex;
+        flex-direction: column;
       }
-
       .header {
         display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
         width: 100%;
         height: 45px;
         background-color: #002A32;
@@ -66,6 +73,16 @@
       #share input, #share label {
         width: 70%;
       }
+      #share, #history {
+        /*position: fixed;*/
+        top: 100px;
+        width: 90%;
+        margin-left: 5%;
+      }
+      #share {
+        /*min-height: 400px;*/
+        height: 100%;
+      }
       button {
         float: right;
         display: inline;
@@ -98,15 +115,74 @@
       #saved-message.show {
         opacity: 1;
         font-weight: 800;
-        /*display: inherit;*/
         z-index: 9;
       }
       #gif-holder {
         width: 100%;
         display: flex;
         justify-content: center;
+        margin-bottom: 20px;
       }
+      .rowmain {
+        min-height: 80px;
+        /*overflow-y: scroll;*/
+      }
+      #history {
+        height: calc(100% - 100px);
+        overflow-y: scroll;
+      }
+      #history li {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      #history li a {
+        margin-left: 5px;
+      }
+      .card-action {
+        float: left;
+        margin: 0;
+        width: 50%;
+        height: 100%;
+        color: #26a69a;
+      }
+      .card-action i { 
+        color: inherit;
+       }
 
+      .card-action:hover {
+        color: #fff;
+      }
+      .card-title {
+        background-color: rgba(0,0,0,0.7);
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      .toast-container {
+        position: fixed;
+        top: 0;
+      }
+      .toast-container .toast {
+        background-color: rgba(0,0,10,0.8);
+        margin-top: 5px;
+      }
+      .gif-holder-holder {
+        height: 100%;
+        width: 100%;
+      }
+      .card-image {
+        width: 350px !important;
+        min-height: 20px !important;
+        overflow: hidden;
+      }
+      #gif-holder .card-image {
+        min-height: 20px !important;
+      }
+/*      .card .card-image img {
+        width: 100%;
+      }*/
     </style>
   </head>
 
@@ -114,17 +190,18 @@
     <div id='saved-message'>
         <span><i>Saved!</i></span>
     </div>
-    <div class='header'>
+    <!-- <div class='header'> -->
+    <div class="header col s12">
       <span>Gifs are <i>always</i> trending!</span>
     </div>
-    <div class="row">
-      <div class="col s12" id='tabs'>
-        <ul class="tabs">
-          <li class="tab col s3"><a href="#share">Change gifs</a></li>
-          <li class="tab col s3"><a class="#change" href="#test2">Share</a></li>
-          <li class="tab col s3"><a href="#history">History</a></li>
-        </ul>
-      </div>
+    <div class="col s12" id='tabs'>
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#share">Change gifs</a></li>
+        <li class="tab col s3"><a href="#history">History</a></li>
+      </ul>
+    <!-- </div> -->
+    </div>
+    <div class="rowmain">
       <div id="share" class="col s12">
         <div class="input-field col s12">
           <input id="search_term" type="text" class="validate">
@@ -132,16 +209,16 @@
           <button class="btn waves-effect waves-light" id='save' name="action">Save</button>
         </div>
 
-        <div class='col s12'>
+        <div class='col s12 gif-holder-holder'>
           <div id='gif-holder'></div>
         </div>  
         
       </div>
       <div id="change" class="col s12">
-      
+
       </div>
       <div id="history" class="col s12">
-        
+
       </div>
     </div>
 

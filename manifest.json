@@ -22,8 +22,8 @@
   "content_scripts": [
     {
       "matches": ["https://www.facebook.com/*", "http://www.facebook.com/*"],
-      "js": ["stupidfacebook.js"],
-      "css": ["stupidfacebook.css"],
+      "js": ["jquery.min.js", "toastr.min.js", "clipboard.min.js", "stupidfacebook.js"],
+      "css": ["toastr.min.css", "stupidfacebook.css", "font-awesome.min.css"],
       "run_at": "document_end"
     }
   ],

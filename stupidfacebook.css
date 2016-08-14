@@ -1,3 +1,97 @@
 ._5mym {
   display: none;
 }
+
+.stupid-btn {
+	text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(38, 166, 154);
+    text-align: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+    height: 36px;
+    line-height: 36px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    outline: 0px;
+    padding: 0px 2rem;
+}
+.stupid-btn:hover {
+    background-color: rgb(43, 187, 173);
+    box-shadow: rgba(0, 0, 0, 0.180392) 0px 5px 11px 0px, rgba(0, 0, 0, 0.14902) 0px 4px 15px 0px;
+}
+
+.waves-effect {
+	background-color: rgba(255, 255, 255, 0.45);
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    will-change: opacity, transform;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+#giphy-holder {
+	overflow: hidden;
+	height: 100%;
+	position: relative;
+	display: flex;
+	direction: column;
+	justify-content: center;	
+	margin-bottom: 20px;
+}
+#giphygif-options {
+	position: absolute;
+	top: -40px;
+	height: 40px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	-webkit-transition: all .25s ease;
+	font-size: 18px;
+	font-weight: 300;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
+#giphygif-options.active { 
+	top: 0;
+}
+#giphygif-share, #giphygif-copy {
+	float: left;
+	position: relative;
+	height: 40px;
+	color: #002A32;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+	background-color: #F7F7FF;
+	width: 50%;
+}
+#giphygif-share:hover, #giphygif-copy:hover {
+	cursor: pointer;
+	color: #E98A15;
+	background-color: #002A32;
+}
+#giphygif-share {
+	
+}
+
+#giphygif-copy {
+
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
