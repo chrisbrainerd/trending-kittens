@@ -74,17 +74,9 @@
 }
 #giphygif-share:hover, #giphygif-copy:hover {
 	cursor: pointer;
-	color: #E98A15;
+	color: #F7F7FF;
 	background-color: #002A32;
 }
-#giphygif-share {
-	
-}
-
-#giphygif-copy {
-
-}
-
 #lean_overlay {
     position: fixed;
     z-index:100;
