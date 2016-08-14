@@ -29,5 +29,9 @@
   ],
   "background": {
     "scripts": ["background.js"]
-  }
+  },
+  "web_accessible_resources": [
+    "icon64_trans.png"
+  ]
+
 }

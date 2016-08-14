@@ -41,7 +41,7 @@
 	height: 100%;
 	position: relative;
 	display: flex;
-	direction: column;
+	direction: row;
 	justify-content: center;	
 	margin-bottom: 20px;
 }
@@ -56,7 +56,6 @@
 	font-size: 18px;
 	font-weight: 300;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-
 }
 #giphygif-options.active { 
 	top: 0;
@@ -77,6 +76,19 @@
 	color: #F7F7FF;
 	background-color: #002A32;
 }
+#giphy-holder:after {
+	content: url('chrome-extension://__MSG_@@extension_id__/icon64_trans.png');
+	position: absolute;
+	bottom: -64px;
+	right: 30px;
+	width: 64px;
+	height: 64px;
+	transition: 0.2s ease-out;
+}
+#giphy-holder:hover:after {
+	bottom: -15px;
+}
+
 #lean_overlay {
     position: fixed;
     z-index:100;
