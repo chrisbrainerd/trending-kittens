@@ -47,7 +47,6 @@ function load_gif() {
             <img id="giphygif" width=260 height=${height} src="${imgurl}" />
         </div>
         `;
-        // <div class="share_button waves-effect stupid-btn" data-url="${imgurl}"><i class="fa fa-facebook-official fa-5x" aria-hidden="true"></i> Share</div>
         document.getElementById("pagelet_trending_tags_and_topics").innerHTML = div;
         var clipboard = new Clipboard('#giphygif-copy');
         document.getElementById("giphygif-share").addEventListener("click", function() {
@@ -62,36 +61,27 @@ function load_gif() {
         document.getElementById("pagelet_trending_tags_and_topics").onmouseout = function() {
             document.getElementById("giphygif-options").className = '';
         }
-
-
     };
     xhr.send();
   });
+}
 
-}
-function share_gif() {
-    alert("sharing!");
-}
 
 // handler for subsequent DOM renders
 function waitForElementToDisplay() {
-        if (document.getElementById('giphygif')!=null) { 
-            return; 
-        }
-        if (document.getElementById('pagelet_trending_tags_and_topics')!=null) {
-            load_gif();
-            return;
-        } else {
-            console.log("nothing yet...")
-            setTimeout(function() {
-                waitForElementToDisplay();
-            }, 100);
-        }
+    if (document.getElementById('giphygif')!=null) { 
+        return; 
     }
-
-
-
-
+    if (document.getElementById('pagelet_trending_tags_and_topics')!=null) {
+        load_gif();
+        return;
+    } else {
+        console.log("nothing yet...")
+        setTimeout(function() {
+            waitForElementToDisplay();
+        }, 100);
+    }
+}
 
 function update_history(imgurl, search_term) {
   console.log("getting history, imgurl: " + imgurl + ", search_term: " + search_term);
@@ -102,16 +92,13 @@ function update_history(imgurl, search_term) {
     } else {
       giphy_history = [];
     }
-  
     if (giphy_history.length >= 5) {
       giphy_history.shift()
     } 
-    
     giphy_history.push({'imgurl': imgurl, 'search_term': search_term})
     chrome.storage.sync.set({'giphy_history': giphy_history}, function() {})
   })
 }
 
-console.log("waiting for element to display")
 waitForElementToDisplay();
 

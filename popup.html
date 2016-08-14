@@ -22,13 +22,24 @@
         font-size: 100%;
         width: 400px;
         background-color: #F5F3F5;
-        color: #002A32;
+        color: #3b5998;
         margin: 0;
         padding: 0;
-        /*overflow: hidden;*/
-        /*min-height: 250px;*/
         display: flex;
         flex-direction: column;
+      }
+      h5 {
+        width: 100%;
+        text-align: center;
+      }
+      input {
+        float: left;
+        display: inline;
+        width: auto;
+      }
+      button {
+        float: right;
+        display: inline;
       }
       .header {
         display: flex;
@@ -37,7 +48,7 @@
         justify-content: center;
         width: 100%;
         height: 45px;
-        background-color: #002A32;
+        background-color: #3b5998;
         color: #F5F3F5;
       }
       .header span {
@@ -58,70 +69,39 @@
         width: 100%;
         padding: 0;
       }
-      #tabs .tab a {
-        color: #002A32 !important;
-      }
-      #tabs .indicator {
-        background-color: #E98A15;
-      }
-      #tabs {
-        margin-bottom: 20px;
-      }
-      h5 {
-        width: 100%;
-        text-align: center;
-      }
-      input {
-        float: left;
-        display: inline;
-        width: auto;
-      }
-      #share input, #share label {
-        width: 70%;
-      }
-      #share, #history {
-        /*position: fixed;*/
-        top: 100px;
-        width: 90%;
-        margin-left: 5%;
-      }
-      #share {
-        /*min-height: 400px;*/
-        height: 100%;
-      }
-      button {
-        float: right;
-        display: inline;
-        /*width: 25%;*/
-      }
-      #saved-message {
-        display: flex;
-        align-items: center;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        font-size: 50px;
-        opacity: 0;
-        background-color: #002A32;
-        color: #F5F3F5;
-        z-index: -1;
-        -webkit-transition: opacity .45s ease-in-out;
-        background-image: repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);
-        background-size: 70px 70px; /* This is unique for this background, need to find a pattern and develop a formula */
-        animation: slide 12s infinite linear forwards;
-      }
       @keyframes slide {
           0% { background-position: 0% 0; }
           100% { background-position: 100% 100%; }
       }
-      #saved-message span {
-        width: 100%;
-        text-align: center;
+      .btn:hover {
+        background-color: #3b5998 !important;
       }
-      #saved-message.show {
-        opacity: 1;
-        font-weight: 800;
-        z-index: 9;
+      .card {
+        width: 350px;
+      }
+      .card-action {
+        float: left;
+        margin: 0;
+        width: 175px;
+        height: 100%;
+        color: #3b5998;
+      }
+      .card-action i { 
+        color: inherit;
+       }
+
+      .card-action:hover {
+        color: #fff;
+      }
+      .card-image {
+        width: 350px !important;
+        min-height: 20px !important;
+        overflow: hidden;
+      }
+      .card-title {
+        background-color: rgba(0,0,0,0.7);
+        max-width: 100%;
+        overflow-x: hidden;
       }
       #gif-holder {
         width: 100%;
@@ -129,9 +109,12 @@
         justify-content: center;
         margin-bottom: 20px;
       }
-      .rowmain {
-        min-height: 80px;
-        /*overflow-y: scroll;*/
+      #gif-holder .card-image {
+        min-height: 20px !important;
+      }
+      .gif-holder-holder {
+        height: 100%;
+        width: 100%;
       }
       #history {
         height: calc(100% - 100px);
@@ -147,24 +130,65 @@
       #history li a {
         margin-left: 5px;
       }
-      .card-action {
-        float: left;
-        margin: 0;
-        width: 50%;
+      .history_img:hover {
+        cursor: pointer;
+      }
+      .rowmain {
+        min-height: 80px;
+      }
+      #save {
+        background-color: #3b5998;
+      }
+      #saved-message {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        width: 100%;
         height: 100%;
-        color: #26a69a;
+        font-size: 50px;
+        opacity: 0;
+        background-color: #3b5998;
+        color: #F5F3F5;
+        z-index: -1;
+        -webkit-transition: opacity .45s ease-in-out;
+        background-image: repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);
+        background-size: 70px 70px;
+        animation: slide 12s infinite linear forwards;
       }
-      .card-action i { 
-        color: inherit;
-       }
-
-      .card-action:hover {
-        color: #fff;
+      #saved-message span {
+        width: 100%;
+        text-align: center;
       }
-      .card-title {
-        background-color: rgba(0,0,0,0.7);
-        max-width: 100%;
-        overflow-x: hidden;
+      #saved-message.show {
+        opacity: 1;
+        font-weight: 800;
+        z-index: 9;
+      }
+      .share_button, .copy_button {
+        font-weight: 500;
+      }
+      #share input, #share label {
+        width: 70%;
+      }
+      #share, #history {
+        top: 100px;
+        width: 90%;
+        margin-left: 5%;
+      }
+      #share {
+        height: 100%;
+      }
+      .share_button:hover, .copy_button:hover {
+        font-weight: 400;
+      }
+      #tabs .tab a {
+        color: #3b5998 !important;
+      }
+      #tabs .indicator {
+        background-color: #E98A15;
+      }
+      #tabs {
+        margin-bottom: 20px;
       }
       .toast-container {
         position: fixed;
@@ -174,29 +198,12 @@
         background-color: rgba(0,0,10,0.8);
         margin-top: 5px;
       }
-      .gif-holder-holder {
-        height: 100%;
-        width: 100%;
-      }
-      .card-image {
-        width: 350px !important;
-        min-height: 20px !important;
-        overflow: hidden;
-      }
-      #gif-holder .card-image {
-        min-height: 20px !important;
-      }
-/*      .card .card-image img {
-        width: 100%;
-      }*/
     </style>
   </head>
-
   <body>
     <div id='saved-message'>
         <span><i>Saved!</i></span>
     </div>
-    <!-- <div class='header'> -->
     <div class="header col s12">
       <img id='mascot' src='icon64_trans.png' />
       <span>Gifs are <i>always</i> trending!</span>
@@ -206,7 +213,6 @@
         <li class="tab col s3"><a href="#share">Change gifs</a></li>
         <li class="tab col s3"><a href="#history">History</a></li>
       </ul>
-    <!-- </div> -->
     </div>
     <div class="rowmain">
       <div id="share" class="col s12">
@@ -215,22 +221,20 @@
           <label for="search_term">Giphy search term</label>
           <button class="btn waves-effect waves-light" id='save' name="action">Save</button>
         </div>
-
         <div class='col s12 gif-holder-holder'>
-          <div id='gif-holder'></div>
+          <div id='gif-holder'>
+          </div>
         </div>  
-        
       </div>
       <div id="change" class="col s12">
-
       </div>
       <div id="history" class="col s12">
-
       </div>
     </div>
-
+    <div class='giphy-attribution'>
+    <img src='giphy-attribution.gif' width=50% style="float: right; margin: 0 10px 10px 0;">
+    </div>
     <script type="text/javascript" src="popup.js"></script>
   </body>
-
 </html>
 

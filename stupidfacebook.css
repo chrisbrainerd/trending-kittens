@@ -17,6 +17,7 @@
     outline: 0px;
     padding: 0px 2rem;
 }
+
 .stupid-btn:hover {
     background-color: rgb(43, 187, 173);
     box-shadow: rgba(0, 0, 0, 0.180392) 0px 5px 11px 0px, rgba(0, 0, 0, 0.14902) 0px 4px 15px 0px;
@@ -45,6 +46,7 @@
 	justify-content: center;	
 	margin-bottom: 20px;
 }
+
 #giphygif-options {
 	position: absolute;
 	top: -40px;
@@ -57,25 +59,29 @@
 	font-weight: 300;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
+
 #giphygif-options.active { 
 	top: 0;
 }
+
 #giphygif-share, #giphygif-copy {
 	float: left;
 	position: relative;
 	height: 40px;
-	color: #002A32;
+	color: #3b5998;
 	display: flex;
 	justify-content: center;
 	align-items: center;	
-	background-color: #F7F7FF;
+	background-color: #FFF;
 	width: 50%;
 }
+
 #giphygif-share:hover, #giphygif-copy:hover {
 	cursor: pointer;
-	color: #F7F7FF;
-	background-color: #002A32;
+	color: #FFF;
+	background-color: #3b5998;
 }
+
 #giphy-holder:after {
 	content: url('chrome-extension://__MSG_@@extension_id__/icon64_trans.png');
 	position: absolute;
@@ -85,6 +91,7 @@
 	height: 64px;
 	transition: 0.2s ease-out;
 }
+
 #giphy-holder:hover:after {
 	bottom: -15px;
 }
@@ -98,4 +105,10 @@
     width:100%;
     background: #000;
     display: none;
+}
+
+.toast-success {
+	background-color: #3b5998;
+	font-size: 18px;
+	font-weight: 300;
 }
