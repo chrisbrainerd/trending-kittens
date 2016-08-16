@@ -1,6 +1,7 @@
 
 body {
 	background-color: #3b5998;
+	font-size: 16px;
 }
 
 .container .main{
@@ -25,10 +26,10 @@ body {
 	right: 20vw;
 }*/
 .header .title {
-	font-size: 4em;
+	font-size: 500%;
 }
 .header .byline {
-	font-size: 1em;
+	font-size: 125%;
 	text-align: right;
 }
 
@@ -39,7 +40,7 @@ body {
 .copy span {
 	width: 100%;
 	font-family: 'Lora', serif;
-	font-size: 3em;
+	font-size: 375%;
 }
 @media only screen and (max-width: 1200px) {
 	.copy span {
@@ -73,18 +74,41 @@ body {
 .copy-gif {
     /*display: flex;*/
 }
-@media only screen and (max-width: 430px) {  
+@media (max-width: 430px) {  
 	.gif img {
 		width: 100%;
 	}
 }
-@media only screen and (max-width: 991px) { 
+@media (max-width: 991px) { 
 	.gif img {
 		margin-left: auto;
 		margin-right: auto;
 	}
 }
-@media only screen and (min-width: 992px) {
+@media (max-width: 991px) and (min-width: 601px) {
+	.container.header .title {
+		font-size: 300%;
+	}
+	.container.header .byline {
+		font-size: 100%;
+	}
+	.container.main span {
+		font-size: 275%;
+	}
+}
+@media (max-width: 600px) {
+	.container.header .title {
+		font-size: 250%;
+	}
+	.container.header .byline {
+		font-size: 100%;
+	}
+	.container.main span {
+		font-size: 225%;
+	}
+}
+
+@media (min-width: 992px) {
 
 	.copy-gif:nth-child(2), .copy-gif:nth-child(2) .copy {
 		height: 315px;
@@ -112,6 +136,9 @@ body {
 }
 
 .footer {
-
 	margin-bottom: 50px;
+}
+
+.tab a {
+	color: #E98A15 !important;
 }
