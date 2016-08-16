@@ -145,3 +145,7 @@ body {
 .tab a {
 	color: #E98A15 !important;
 }
+
+.fb-share-button>span {
+	vertical-align: middle;
+}
