@@ -157,5 +157,5 @@ body {
 }
 
 .st_fblike_large>span {
-	vertical-align: middle;
+	vertical-align: middle !important;
 }
