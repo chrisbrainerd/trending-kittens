@@ -1,14 +1,145 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>test</title>
+	<head>
+		<meta charset="utf-8">
+		<title>test</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+		<script src="https://use.fontawesome.com/2ed3a0928f.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
 
-  </head>
-  <body>
-  	<span>It worked! </span>
 
-  	<script src='index.js'/>
-  </body>
+	<body>
+		<div class='container header'>
+			<div class='row header'>			
+				<div class='col s12 valign-wrapper'>
+					<span class='title'>Kittens are Always Trending</span>
+					<img src='icon64_trans.png' class='logo'>
+				</div>
+			
+				<div class='col s12 valign-wrapper'>
+					<span class='byline'>a Chrome extension to make Facebook suck a little bit less</span> 
+				</div>
+			</div>
+		</div>
+		<div class='container main'>
+			<div class='row'>
+				<div class='col s12 m12 l12 center-align call-button'>
+					<a href='https://chrome.google.com/webstore/detail/kittens-are-always-trendi/eedfomkagfkmleinnllkbldagompmpmk' class="waves-effect waves-light btn btn-large"><i class="fa fa-chrome" aria-hidden="true"></i>&nbsp;get it now!</a>
+				</div>
+			</div>
+			<div class='row copy-gif card-thing'>
+				<div class='col s12 m12 l5 copy valign-wrapper right-align'>
+					<span>Why look at this...</span>
+				</div>
+				<div class='col s12 m12 l7 gif valign-wrapper'>
+					<img src='web1.png'>
+				</div>
+			</div>
+			<div class='row copy-gif card-thing'>
+				<div class='col s12 m12 l5 copy valign-wrapper right-align'>
+					<span>...when gifs exist?</span>
+				</div>
+				<div class='col s12 m12 l7 gif valign-wrapper'>
+					<img src='https://media0.giphy.com/media/kq52QKDmxKPeM/giphy.gif' width=400>
+				</div>
+			</div>
+			<div class='row copy-gif card-thing'>
+				<div class='col s12 m12 l5 copy valign-wrapper right-align'>
+					<span>Kittens not your thing?</span>
+				</div>
+				<div class='col s12 m12 l7 gif valign-wrapper'>
+					<img src='hate_kittens.gif' width=400>
+				</div>
+			</div>
+			<div class='row copy-gif card-thing'>
+				<div class='col s12 m12 l5 copy valign-wrapper right-align'>
+					<span>Find something you like!</span>
+				</div>
+				<div class='col s12 m12 l7 gif valign-wrapper'>
+					<img src='sadness_forever.gif' width=400>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col s12 m12 l12 center-align call-button'>
+					<a href='https://chrome.google.com/webstore/detail/kittens-are-always-trendi/eedfomkagfkmleinnllkbldagompmpmk' class="waves-effect waves-light btn btn-large"><i class="fa fa-chrome" aria-hidden="true"></i>&nbsp;get it now!</a>
+				</div>
+			</div>
+
+		<div class="col s12 m12 l12 card-thing footer">
+			<ul class="tabs">
+				<li class="tab col s4 m4 l4"><a class="active" href="#tab1">Comments</a></li>
+				<li class="tab col s4 m4 l4"><a href="#tab2">FAQ</a></li>
+				<li class="tab col s4 m4 l4"><a href="#tab3">Contact</a></li>
+
+			</ul>
+			<div id="tab1" class="col s12 m12 l12">
+				<div id="disqus_thread"></div>
+				<script>
+
+				/**
+				 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+				 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+				/*
+				var disqus_config = function () {
+				    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+				    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				*/
+				(function() { // DON'T EDIT BELOW THIS LINE
+				    var d = document, s = d.createElement('script');
+				    s.src = 'http://kittensarealwaystrending.disqus.com/embed.js';
+				    s.setAttribute('data-timestamp', +new Date());
+				    (d.head || d.body).appendChild(s);
+				})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				                                    
+			</div>
+			<div id="tab2" class="col s12 m12 l12">
+
+				<ul class="collapsible" data-collapsible="accordion">
+					<li>
+						<div class="collapsible-header">Why did you make this?</div>
+						<div class="collapsible-body"><p>Right now I have an eight-month-old daughter and there's been a crazy heat wave. THose might not seem that related, but my wife had been frustrated that the <i>Trending Stories</i> feature Facebook recently added seemed to have some horrible news story almost every day of a pet or child dying because someone left them in a hot car. Now first off, <a href='https://www.youtube.com/watch?v=gBTGcWUf2ts'>you shouldn't do that ever, and I hope you don't need to be told that</a>. But that said, that's not the kind of thing that my wife wanted to see every single day when checking in on her friends, so I decided to do something about it. That something could have been way simpler, but that's no fun ¯\_(ツ)_/¯</p></div>
+					</li>
+					<li>
+						<div class="collapsible-header">Could you add a feasure so that _____?</div>
+						<div class="collapsible-body"><p>If I have time? <a href='mailto:kittens@chrisbrainerd.com'>Shoot me an email</a> and I'll see what I can do.</p></div>
+					</li>
+					<li>
+						<div class="collapsible-header">Why does chrome say you need to access my browser history?</div>
+						<div class="collapsible-body"><p>So it's about to get techie real fast, but the tl;dr up front is that I'm not looking at or storing any history data, but because facebook works in a fancy way I have to watch to see when your history changes to know when to put a gif back on the page.</p>
+						<hr>
+						<p>The long version for those who care is that Facebook is built on React.js, and more importantly is built as a Single Page App (SPA) and uses its own routing. The old way would be like this: you go to facebook.com and it sends a request to the server which sends you back a full .html file with everything on facebook.com you end up seeing - this triggers the window.onload() signal (and a few others), and so we could just set our gif-placer doodad in there. If you went to your profile, it'd do the same - sending a new request to the server, sending back a .html, and triggering window.onload(). However, the way React (and many other frontend frameworks) work is that when you go from facebook.com to your profile, it sends a request, but then the server only sends back the parts that <i>changed</i>, and there's some javascript magic that updates the DOM. Because we're just hot-swapping DOM components, it never triggers window.onload() again. However, it <i>does</i> trigger onHistoryStateUpdated (which is why when you navigate to your profile, you can hit back and return to facebook.com). In order to use that signal, chrome extensions need to add the 'webNavigation' permission, which is what's giving you that scary message.</p></div>
+					</li>
+				</ul>
+
+
+			</div>
+			<div id="tab3" class="col s12 m12 l12">
+				<table>
+					<tr>
+						<td>email:</td>
+						<td><a href='mailto:kittens@chrisbrainerd.com'><i class="fa fa-envelope-o" aria-hidden="true"></i>
+ kittens@chrisbrainerd.com</td>
+					</tr>
+					<tr>
+						<td>github:</td>
+						<td><a href='https://github.com/chrisbrainerd/'><i class="fa fa-github" aria-hidden="true"></i> chrisbrainerd</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+
+		</div>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+		<!-- <script id="dsq-count-scr" src="http://kittensareal	waystrending.disqus.com/count.js" async></script> -->
+	</body>
 </html>
