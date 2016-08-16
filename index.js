@@ -9,7 +9,11 @@
 		setTimeout(function() {
 			clearInterval(scrollDown)
 		}, 100)
+    })
 
+    $(".call-button>.btn").click(function() {
+    	console.log(this.children[0]);
+    	this.children[0].click();
     })
   });
 
