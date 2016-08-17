@@ -141,8 +141,9 @@ body {
 .call-button span {
 	vertical-align: middle;
 }
-.call-button>span {
-	background-color: #E98A15;
+.call-button>.btn {
+	background-color: #F5F3F5;
+	padding: 0 15px 0 15px;
 }
 
 .st_fblike_large>span {
