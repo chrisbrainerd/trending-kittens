@@ -1,6 +1,10 @@
 # trending-kittens
 Kittens Are Always Trending - a Chrome extension
 ================================
+
+# OBSOLETE
+This was made for a super old version of facebook and was dependent on how they laid out the DOM. RIP
+
 This is a chrome extension written to replace the Trending Stories section of your Facebook main page with gifs of your choosing. 
 
 Todos:
